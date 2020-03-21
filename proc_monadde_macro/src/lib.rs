@@ -14,7 +14,7 @@ impl AppendLine for String {
 #[proc_macro]
 pub fn define_monadde_macro(_: TokenStream) -> TokenStream {
     const DEPTH:i32 = 10; // make it bigger in the case you need more depth (thx Cap)
-    let mut result_string = String::from("macro_rules! monadde {\n");
+    let mut result_string = String::from("#[macro_export]\nmacro_rules! monadde {\n");
 
     //map step (simplest variant possible)
     result_string.append_line("($e_in:expr => $i:ident |> $e_out:expr)");
