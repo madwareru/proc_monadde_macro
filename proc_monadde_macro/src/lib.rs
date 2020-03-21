@@ -1,10 +1,10 @@
 use proc_macro::TokenStream;
 
-trait AppentLine {
+trait AppendLine {
     fn append_line(&mut self, s: &str);
 }
 
-impl AppentLine for String {
+impl AppendLine for String {
     fn append_line(&mut self, s: &str) {
         self.push_str(s);
         self.push_str("\n");
